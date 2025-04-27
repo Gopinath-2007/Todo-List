@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+</head>
+
+<body>
+    <style>
+        * {
+            padding: 0%;
+            margin: 0%;
+        }
+
+        .s-table {
+            border-collapse: collapse;
+            width: 50%;
+        }
+
+        :where(.s-table) th,
+        :where(.s-table) td {
+            border: 1px solid #dddd;
+            text-align: center;
+            width: auto;
+            padding: 4px;
+        }
+
+        :where(.s-table) tr:nth-child(even) {
+            background-color: #dddd;
+        }
+
+        :where(.s-body) tr:nth-child(even) {
+            background-color: #dddd;
+        }
+
+        .s-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 8px;
+        }
+
+        .top {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #dddd;
+            height: 56px;
+        }
+
+        .in-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 8px;
+        }
+
+        .in-table {
+            border-collapse: collapse;
+            width: 35%;
+        }
+
+        :where(.in-table) th {
+            border: 1px solid #dddd;
+            padding: 4px;
+        }
+
+        :where(.in-table) td {
+            border: 1px solid #dddd;
+            padding: 4px;
+            text-align: center;
+        }
+
+        :where(.in-table) tr:nth-child(even) {
+            background-color: #dddd;
+        }
+
+        .name,
+        .age,
+        .number,
+        .course {
+            width: 200px;
+            height: 20px;
+        }
+
+        :where(.in-table) button {
+            width: 100px;
+        }
+
+        .male,
+        .female {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    </style>
+    <div class="top">
+        <h1>Student Registration</h1>
+    </div>
+    <div class="in-container">
+        <table class="in-table">
+            <tr>
+                <th>Name</th>
+                <td><input type="text" id="" placeholder="Enter the name" class="name" required></td>
+            </tr>
+            <tr>
+                <th>Age</th>
+                <td><input type="number" placeholder="Enter the age" class="age" required></td>
+            </tr>
+            <tr>
+                <th>Gender</th>
+                <td><input type="radio" name="gender" class="male" id="male">Male <input type="radio" name="gender"
+                        class="female" id="female">Female</td>
+            </tr>
+            <tr>
+                <th>Mobile Number</th>
+                <td><input type="number" placeholder="Enter the mobile number" class="number" required></td>
+            </tr>
+            <tr>
+                <th>Course</th>
+                <td>
+                    <select required class="course">
+                        <option  disabled selected >Select the course</option>
+                        <option >Computer Science</option>
+                        <option >Electrical and Electronics</option>
+                        <option >Electronic Communication</option>
+                        <option >Civil</option>
+                        <option >Mechanical</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"><button type="submit" onclick="save ()">Submit</button></td>
+            </tr>
+        </table>
+    </div>
+    <div class="s-container">
+        <table class="s-table">
+            <tbody class="s-body">
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Mobile Number</th>
+                    <th>Course</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>Gopinath</td>
+                    <td>17</td>
+                    <td>Male</td>
+                    <td>8124536527</td>
+                    <td>Computer Science</td>
+                    <td onclick="Delete(event)"><button>Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="table.js"> </script>
+</body>
+
+</html>
